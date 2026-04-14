@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Main Selection - E-Waste Management{% endblock %}
+
+{% block content %}
+<div class="selection-container">
+    <div class="selection-card">
+        <h1>Welcome, {{ session.user_name }}!</h1>
+        <p>What would you like to do?</p>
+        
+        <div class="selection-buttons">
+            <a href="{{ url_for('sell') }}" class="selection-btn sell-btn">
+                <i class="fas fa-plus-circle"></i>
+                <div>
+                    <h3>SELL</h3>
+                    <p>List your e-waste for sale</p>
+                </div>
+            </a>
+            
+            <a href="{{ url_for('buy') }}" class="selection-btn buy-btn">
+                <i class="fas fa-shopping-bag"></i>
+                <div>
+                    <h3>BUY</h3>
+                    <p>Browse available items</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

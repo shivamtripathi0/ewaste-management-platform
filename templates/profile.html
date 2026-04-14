@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Profile - E-Waste Management{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1><i class="fas fa-user"></i> Profile</h1>
+</div>
+
+<div class="profile-container">
+    <div class="profile-card">
+        <div class="profile-header">
+            <i class="fas fa-user-circle"></i>
+            <h2>{{ session.user_name }}</h2>
+            <p>{{ session.user_email }}</p>
+        </div>
+        
+        <div class="profile-stats">
+            <div class="stat">
+                <h3>0</h3>
+                <p>My Orders</p>
+            </div>
+            <div class="stat">
+                <h3>0</h3>
+                <p>Liked Items</p>
+            </div>
+            <div class="stat">
+                <h3>0</h3>
+                <p>Listed Items</p>
+            </div>
+        </div>
+        
+        <div class="profile-actions">
+            <button class="btn btn-secondary">Edit Profile</button>
+            <button class="btn btn-outline">My Listings</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

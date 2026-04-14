@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Buy Items - E-Waste Management{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1><i class="fas fa-shopping-bag"></i> Available Items</h1>
+    
+    <!-- Filters and Sorting -->
+    <div class="filters-container">
+        <div class="filter-group">
+            <select id="filterSelect" onchange="applyFilters()">
+                <option value="all">All Items</option>
+                <option value="donate">Donations Only</option>
+                <option value="sell">Selling Only</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <select id="sortSelect" onchange="applyFilters()">
+                <option value="recent">Recent Items</option>
+                <option value="price_low">Price: Low to High</option>
+                <option value="price_high">Price: High to Low</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="items-grid" id="itemsGrid">
+    {% for item in items %}
+    <div class="item-card">
+        <div class="item-image-placeholder">
+            <i class="fas fa-laptop"></i>
+        </div>
+        <div class="item-content">
+            <h3>{{ item[1] }}</h3>
+            <p class="item-description">{{ item[2][:100] }}...</p>
+            <div class="item-meta">
+                <span class="category">{{ item[3] }}</span>
+                <span class="condition">{{ item[4] }}</span>
+            </div>
+            <div class="item-price">
+                {% if item[5] %}
+                    ${{ "%.2f"|format(item[5]) }}
+                {% else %}
+                    <span class="donation">FREE - Donation</span>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
