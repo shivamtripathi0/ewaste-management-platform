@@ -26,3 +26,9 @@ http://127.0.0.1:5000/
 
 ## 👨‍💻 Author
 Shivam Tripathi
+
+## 👥 Team Members
+- Shivam Tripathi
+- Shivam Yadav
+- Harshit Dhar Dwivedi
+- Amit Rajak
